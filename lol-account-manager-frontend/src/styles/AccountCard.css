@@ -1,81 +1,200 @@
 /* src/styles/AccountCard.css */
 .account-card {
-    background-color: var(--card-bg-color);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .account-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--shadow-color);
-  }
-  
-  .account-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .account-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin: 0;
-  }
-  
-  .account-server {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
-  
-  .account-flairs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .account-actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-  }
-  
-  .btn-view, .btn-delete {
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    flex: 1;
-  }
-  
-  .btn-view {
-    background-color: var(--accent-color);
-    color: white;
-    text-decoration: none;
-    margin-right: 10px;
-  }
-  
-  .btn-view:hover {
-    background-color: var(--secondary-color);
-  }
-  
-  .btn-delete {
-    background-color: transparent;
-    color: var(--error-color);
-    border: 1px solid var(--error-color);
-  }
-  
-  .btn-delete:hover {
-    background-color: var(--error-color);
-    color: white;
-  }
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.account-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 10px rgba(138, 43, 226, 0.3);
+  border-color: var(--primary-color);
+}
+
+.account-card.favorite {
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+}
+
+.favorite-star {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--primary-color);
+  color: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: rotate(15deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.account-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.account-server {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.account-flairs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  min-height: 30px;
+}
+
+.account-login {
+  background-color: rgba(26, 26, 26, 0.5);
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+}
+
+.login-info {
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+}
+
+.login-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.login-row:last-child {
+  margin-bottom: 0;
+}
+
+.login-label {
+  color: var(--text-color);
+  font-weight: 500;
+  margin-right: 8px;
+  min-width: 65px;
+}
+
+.login-value {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-copy {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: none;
+  padding: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 8px;
+}
+
+.btn-copy:hover {
+  color: var(--primary-color);
+  transform: scale(1.15);
+}
+
+.copy-message {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.account-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.btn-view, .btn-delete, .btn-favorite {
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-view {
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  flex: 2;
+}
+
+.btn-view:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.btn-favorite {
+  background-color: transparent;
+  color: #FFD700;
+  border: 1px solid #FFD700;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.btn-favorite:hover {
+  background-color: rgba(255, 215, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.account-card.favorite .btn-favorite {
+  background-color: rgba(255, 215, 0, 0.15);
+  color: #FFD700;
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+  flex: 1;
+}
+
+.btn-delete:hover {
+  background-color: var(--error-color);
+  color: white;
+  transform: translateY(-2px);
+}

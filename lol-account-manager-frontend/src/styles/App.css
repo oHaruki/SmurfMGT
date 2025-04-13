@@ -2,36 +2,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary-color: #0A1128;
-  --secondary-color: #034078;
-  --accent-color: #1282A2;
-  --background-color: #F7F9FB;
-  --text-color: #2E3440;
-  --error-color: #E63946;
-  --success-color: #2ECC71;
-  --border-color: #D8DEE9;
-  --card-bg-color: #FFFFFF;
-  --shadow-color: rgba(10, 17, 40, 0.1);
+  /* Dark Mode Purple Theme */
+  --primary-color: #8A2BE2; /* Vibrant purple */
+  --secondary-color: #9370DB; /* Medium purple */
+  --accent-color: #B16CEA; /* Light purple */
+  --background-color: #121212; /* Near black */
+  --card-bg-color: #1E1E1E; /* Dark gray for cards */
+  --text-color: #F8F8F8; /* Off-white for readability */
+  --secondary-text-color: #B3B3B3; /* Light gray for secondary text */
+  --error-color: #FF5252; /* Bright red for errors */
+  --success-color: #4CAF50; /* Green for success */
+  --border-color: #333333; /* Dark gray for borders */
+  --shadow-color: rgba(0, 0, 0, 0.3); /* Darker shadow */
   
-  /* Rank colors */
-  --iron-color: #747474;
-  --bronze-color: #b97448;
-  --silver-color: #9ca1a3;
-  --gold-color: #f1c40f;
-  --platinum-color: #36a59d;
-  --diamond-color: #3498db;
-  --master-color: #9b59b6;
-  --grandmaster-color: #e74c3c;
-  --challenger-color: #f39c12;
+  /* Rank colors - slightly adjusted for dark theme */
+  --iron-color: #858585;
+  --bronze-color: #cd7f32;
+  --silver-color: #aaa9ad;
+  --gold-color: #ffd700;
+  --platinum-color: #50c8c6;
+  --diamond-color: #3db9eb;
+  --master-color: #b04fd4;
+  --grandmaster-color: #f44336;
+  --challenger-color: #ffb300;
   
-  /* Flair colors */
-  --flair-blue: #2563eb;
-  --flair-purple: #9333ea;
-  --flair-green: #16a34a;
-  --flair-orange: #ea580c;
-  --flair-gray: #6b7280;
-  --flair-teal: #0d9488;
-  --flair-pink: #db2777;
+  /* Flair colors - adjusted for dark theme */
+  --flair-blue: #4080ff;
+  --flair-purple: #a855f7;
+  --flair-green: #22c55e;
+  --flair-orange: #f97316;
+  --flair-gray: #94a3b8;
+  --flair-teal: #14b8a6;
+  --flair-pink: #ec4899;
 }
 
 * {
@@ -73,6 +75,12 @@ button {
   padding: 8px 16px;
   font-size: 1rem;
   transition: all 0.3s ease;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
 }
 
 button:disabled {
@@ -88,6 +96,8 @@ input, select, textarea {
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s ease;
+  background-color: #2A2A2A; /* Slightly lighter than card background */
+  color: var(--text-color);
 }
 
 input:focus, select:focus, textarea:focus {
@@ -96,7 +106,7 @@ input:focus, select:focus, textarea:focus {
 
 .error {
   color: var(--error-color);
-  background-color: rgba(230, 57, 70, 0.1);
+  background-color: rgba(255, 82, 82, 0.15);
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 15px;
@@ -109,6 +119,16 @@ input:focus, select:focus, textarea:focus {
   align-items: center;
   min-height: 200px;
   font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
   color: var(--accent-color);
 }
 

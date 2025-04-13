@@ -28,10 +28,22 @@ class ApiService {
     this.api.interceptors.response.use(
       (response) => response.data,
       (error) => {
-        const message = error.response?.data?.error || error.message;
+        let message = error.response?.data?.error || error.message;
+        
+        // Include details for more informative error messages
+        if (error.response?.data?.details) {
+          message += ` (${error.response.data.details})`;
+        }
+        
+        // Include solution if available
+        if (error.response?.data?.solution) {
+          message += `. ${error.response.data.solution}`;
+        }
+        
         return Promise.reject({ 
           message, 
-          status: error.response?.status 
+          status: error.response?.status,
+          details: error.response?.data
         });
       }
     );
@@ -60,6 +72,54 @@ class ApiService {
   
   async delete(endpoint) {
     return this.api.delete(endpoint);
+  }
+  
+  // Auth methods
+  async login(email, password) {
+    return this.post('/auth/login', { email, password });
+  }
+  
+  async register(username, email, password) {
+    return this.post('/auth/register', { username, email, password });
+  }
+  
+  // Account methods
+  async getAccounts() {
+    return this.get('/accounts');
+  }
+  
+  async getAccount(id) {
+    return this.get(`/accounts/${id}`);
+  }
+  
+  async createAccount(accountData) {
+    return this.post('/accounts', accountData);
+  }
+  
+  async updateAccount(id, accountData) {
+    return this.put(`/accounts/${id}`, accountData);
+  }
+  
+  async deleteAccount(id) {
+    return this.delete(`/accounts/${id}`);
+  }
+  
+  // Flair methods
+  async getFlairs() {
+    return this.get('/flairs');
+  }
+  
+  async addFlair(accountId, flairId) {
+    return this.post(`/accounts/${accountId}/flairs`, { flairId });
+  }
+  
+  async removeFlair(accountId, flairId) {
+    return this.delete(`/accounts/${accountId}/flairs/${flairId}`);
+  }
+  
+  // Riot API methods
+  async getRiotSummoner(server, summonerName) {
+    return this.get(`/riot/summoner/${server}/${summonerName}`);
   }
 }
 
