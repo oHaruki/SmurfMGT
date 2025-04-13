@@ -1,0 +1,71 @@
+/* src/styles/AccountsList.css */
+.accounts-list {
+    padding: 20px;
+  }
+  
+  .accounts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .btn-add {
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-add:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .accounts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .no-accounts {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--shadow-color);
+  }
+  
+  .no-accounts p {
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  
+  .btn-add-large {
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-add-large:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  @media (max-width: 768px) {
+    .accounts-header {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    
+    .accounts-grid {
+      grid-template-columns: 1fr;
+    }
+  }

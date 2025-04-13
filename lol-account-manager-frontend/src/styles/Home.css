@@ -1,0 +1,127 @@
+/* src/styles/Home.css */
+.home {
+    min-height: calc(100vh - 80px);
+  }
+  
+  .hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+  
+  .btn-hero {
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+  }
+  
+  .btn-hero:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+  }
+  
+  .btn-hero-outline {
+    background-color: transparent;
+    border: 2px solid white;
+  }
+  
+  .btn-hero-outline:hover {
+    background-color: white;
+    color: var(--primary-color);
+  }
+  
+  .features {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .feature-card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+  }
+  
+  .feature-card p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    
+    .hero p {
+      font-size: 1rem;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .btn-hero {
+      margin: 0;
+    }
+  }
+  

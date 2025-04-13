@@ -1,0 +1,119 @@
+/* src/styles/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #0A1128;
+  --secondary-color: #034078;
+  --accent-color: #1282A2;
+  --background-color: #F7F9FB;
+  --text-color: #2E3440;
+  --error-color: #E63946;
+  --success-color: #2ECC71;
+  --border-color: #D8DEE9;
+  --card-bg-color: #FFFFFF;
+  --shadow-color: rgba(10, 17, 40, 0.1);
+  
+  /* Rank colors */
+  --iron-color: #747474;
+  --bronze-color: #b97448;
+  --silver-color: #9ca1a3;
+  --gold-color: #f1c40f;
+  --platinum-color: #36a59d;
+  --diamond-color: #3498db;
+  --master-color: #9b59b6;
+  --grandmaster-color: #e74c3c;
+  --challenger-color: #f39c12;
+  
+  /* Flair colors */
+  --flair-blue: #2563eb;
+  --flair-purple: #9333ea;
+  --flair-green: #16a34a;
+  --flair-orange: #ea580c;
+  --flair-gray: #6b7280;
+  --flair-teal: #0d9488;
+  --flair-pink: #db2777;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+input, select, textarea {
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.error {
+  color: var(--error-color);
+  background-color: rgba(230, 57, 70, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-left: 3px solid var(--error-color);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+}

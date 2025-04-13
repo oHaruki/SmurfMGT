@@ -1,0 +1,74 @@
+/* src/styles/RankBadge.css */
+.rank-badge {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .rank-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* src/styles/Loader.css */
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+  
+  .loader {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid var(--accent-color);
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* src/styles/NotFound.css */
+  .not-found {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .not-found h1 {
+    font-size: 6rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+  
+  .not-found h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+  
+  .not-found p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+  }
+  
+  .btn-home {
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-home:hover {
+    background-color: var(--secondary-color);
+  }

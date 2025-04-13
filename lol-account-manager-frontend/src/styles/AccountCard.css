@@ -1,0 +1,81 @@
+/* src/styles/AccountCard.css */
+.account-card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .account-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+  }
+  
+  .account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .account-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+  }
+  
+  .account-server {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .account-flairs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .account-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .btn-view, .btn-delete {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    flex: 1;
+  }
+  
+  .btn-view {
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .btn-view:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .btn-delete {
+    background-color: transparent;
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+  }
+  
+  .btn-delete:hover {
+    background-color: var(--error-color);
+    color: white;
+  }
